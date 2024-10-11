@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: hsl(30, 38%, 92%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background: hsl(0, 0%, 100%);
+    height: 450px;
+
+    .container {
+        &.image-sec {
+            width: 50%;
+            background-image: url(./images/image-product-desktop.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        &.content-sec {
+            width: 50%;
+
+            .data-sec {
+                padding: 30px;
+
+                h4 {
+                    font-size: 14px;
+                    font-weight: 500;
+                    font-family: montserrat;
+                    letter-spacing: 5px;
+                    color: hsl(228, 12%, 48%);
+                }
+
+                h1 {
+                    font-family: Fraunces;
+                    font-size: 35px;
+                    font-weight: 700;
+                    margin: 15px auto;
+                    line-height: 35px;
+                }
+
+                p {
+                    font-size: 15px;
+                    font-family: montserrat;
+                    font-weight: 500;
+                    color: hsl(228, 12%, 48%);
+                    line-height: 25px;
+                }
+
+                .amount {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    margin: 20px auto;
+
+                    h2 {
+                        color: hsl(158, 36%, 37%);
+                        font-family: Fraunces;
+                        font-size: 30px;
+                        font-weight: 700;
+                    }
+
+                    span {
+                        text-decoration: line-through;
+                        color: hsl(228, 12%, 48%);
+                        font-size: 14px;
+                    }
+                }
+
+                .btn {
+                    color: white;
+                    background: #3c8067;
+                    height: 45px;
+                    width: 100%;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 15px;
+                    font-weight: 700;
+                    font-family: montserrat;
+
+                    i {
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card-container {
+        flex-direction: row;
+
+        .container {
+            &.image-sec {
+                width: 50%;
+                height: auto;
+            }
+
+            &.content-sec {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        height: 100%;
+        max-height: 600px;
+
+        .container {
+            &.image-sec {
+                width: 100%;
+                height: 100%;
+                background-image: url('./images/image-product-mobile.jpg');
+                max-height: 300px;
+            }
+
+            &.content-sec {
+                width: 100%;
+            }
+        }
+    }
+}
